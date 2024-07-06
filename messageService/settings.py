@@ -75,8 +75,14 @@ WSGI_APPLICATION = 'messageService.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        # postgresql database in docker container
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'messageService',
+        'USER': 'postgres',
+        'PASSWORD': 'password',
+        'HOST': 'db',
+        'PORT': '5432',
+        
     }
 }
 
